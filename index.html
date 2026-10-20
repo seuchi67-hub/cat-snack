@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#f9eddc">
+  <title>小猫接零食</title>
+  <link rel="stylesheet" href="./style.css">
+  <script src="./game.js" defer></script>
+</head>
+<body>
+  <main class="game-shell">
+    <header class="brand"><span class="paw">●</span> 猫咪的午后 <span class="edition">小游戏 · 01</span></header>
+    <section class="board" aria-label="小猫接零食游戏">
+      <canvas id="game" width="420" height="700" aria-label="游戏画布：左右移动接住饼干，避开灰色毛球"></canvas>
+      <div id="hud" class="hud" hidden>
+        <div><span>本局得分</span><strong id="score">0</strong></div>
+        <div class="timer"><span>剩余时间</span><strong><b id="time">60</b><small> 秒</small></strong></div>
+        <button id="pause-button" class="pause-button" aria-label="暂停游戏">Ⅱ</button>
+      </div>
+      <section id="start-screen" class="overlay">
+        <div class="intro-tag">一口快乐，接住就好</div>
+        <h1>小猫<br><span>接零食</span></h1>
+        <p class="subtitle">和小猫一起，收集一个甜甜的午后。</p>
+        <div class="cat-space" aria-hidden="true"></div>
+        <div class="rules"><p><i class="cookie-icon"></i> 接住饼干 <b>+10 分</b></p><p><i class="ball-icon"></i> 躲开毛球 <b>−15 分</b></p></div>
+        <button id="start-button" class="primary">开始接零食 <span>→</span></button>
+        <p class="hint">每局 60 秒 · 拖动小猫 / 键盘 ← →</p>
+        <p class="best">本机最高分 <b id="start-best">0</b></p>
+      </section>
+      <section id="pause-screen" class="overlay compact" hidden>
+        <div class="panel"><div class="intro-tag">休息一下</div><h2>小猫等你回来</h2><p>游戏已暂停，时间不会减少。</p><button id="resume-button" class="primary">继续游戏 →</button></div>
+      </section>
+      <section id="result-screen" class="overlay compact" hidden>
+        <div class="panel"><div class="intro-tag">今日份快乐已收集</div><h2>接得好，喵！</h2><p>本局得分</p><strong id="final-score" class="final-score">0</strong><p id="record-message">再来收集一些美味吧。</p><p class="best">本机最高分 <b id="result-best">0</b></p><button id="restart-button" class="primary">再玩一次 <span>↻</span></button><button id="home-button" class="text-button">返回开始页</button></div>
+      </section>
+      <div id="play-hint" class="play-hint" hidden>左右拖动，接住好心情</div>
+    </section>
+    <footer>小小零食，大大满足。<span>纯 H5 · 无需下载</span></footer>
+  </main>
+</body>
+</html>
